@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Hair Day website"
+    />
+    <title>Hair Day</title>
+    <link rel="stylesheet" href="./styles.css">
+  </head>
+  <body>
+    <div class="container">
+        <!-- HEAADER -->
+        <header>
+            <div class="fixed" id="header">
+                <img id="logo-img" src="./images/Artboard19.png" alt="Hair day Logo" />
+                <!-- Appear on bigger screen -->
+                <nav class="navbar">
+                    <ul>
+                        <li class="nav-item"><a href="#intro" >Home</a></li>
+                        <li class="nav-item"><a href="#team" >Team</a></li>
+                        <li class="nav-item"><a href="#detail">Location</a></li>
+                        <li class="nav-item"><a href="#detail-booking">Booking</a></li>
+                    </ul>
+                </nav>
+                <!-- Sidebar button if mobile -->
+                <div class="nav-sidebar">
+                    <button id="nav-btn" title="Open Sidebar" class="toggleBtn" onClick="">Open</button>
+                    <div id="sidebar" class='sidebar'>
+                        <button id="side-btn" class="toggleBtn" title="Close Sidebar" onClick={props.toggle}>Close</button>
+                        <ul class='sidebar-ul'>
+                            <li class="side-item"><a href="#intro" >Home</a></li>
+                            <li class="side-item"><a href="#team" >Team</a></li>
+                            <li class="side-item"><a href="#detail">Location</a></li>
+                            <li class="side-item"><a href="#detail-booking">Booking</a></li>
+                        </ul>
+                      </div>
+                  </div>
+            </div>
+        </header>
+        <!-- Main -->
+        <main>
+            <!-- Intro -->
+            <section id="intro">
+                <div id='intro-back'>
+                    <div id="intro-heading" class='sub-heading'>
+                        <img id="intro-logo" src="./images/Artboard22.png" alt="Hair day" />
+                        <h1>The place to <br />"Treat Yourself"</h1>
+                        <button id="intro-book"><a href="#detail">Book Now!</a></button>
+                    </div>
+                </div>
+            </section>
+            <!-- Team -->
+            <section id="team">
+                <div id="team-heading" class='sub-heading'>
+                    <h2>Meet the team</h2>
+                    <p>Through our tutorial</p>
+                </div>
+                <div class="tutorial-video">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/Cqu2ynINZFc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+            </section>
+            <!-- detail -->
+            <section id="detail">
+                <div id="detail-opening" class='card'>
+                    <h3>Opening Hours</h3>
+                    <p>Monday & Tuesday CLOSED</p>
+                    <p>Wednesday – Friday 9am – 8pm</p>
+                    <p>Saturday 9am – 5pm</p>
+                    <p>Sunday 11am – 7pm</p>
+                </div>
+                <div id="detail-location" class='card'>
+                    <h3>Location</h3>
+                    <p>T: 123-456-7890</p>
+                    <br />
+                    <p>XX Dayton Street</p>
+                    <p>Madison, Wisconsin</p>
+                </div>
+                <div id="detail-booking" class='card'>
+                    <h3>Booking Form</h3>
+                    <form id="booking" action="/" method="post">
+                        <label htmlFor="booking-name">Name</label>
+                        <input autoComplete="off" type="text" name="name" id="booking-name" placeholder='name'  />
+                        <label htmlFor="booking-tel">Tel No.</label>
+                        <input autoComplete="off" type="text" name="name" id="booking-tel" placeholder='name'  />
+                        <label htmlFor="booking-date">Date</label>
+                        <input autoComplete="off" type="date" name="name" id="booking-date" placeholder='name'  />
+                    </form>
+                </div>
+            </section>
+            <!-- Footer -->
+            <footer>
+                <img id="footer-logo-img" src="./images/Artboard19.png" alt="Hair day Logo" />
+                <p>Copyright Hair Day</p>
+            </footer>
+          </main>
+    </div>
+    <script>
+        
+        // SCROLL EVENT 
+        const header = document.getElementById("header")
+
+        const stickNavbar = () => {
+            if (window !== undefined) {
+                let windowHeight = window.scrollY;
+                // window height changed for the demo
+                if (windowHeight > 100) {
+                    header.classList.remove("fixed");
+                    header.classList.add("sticky");
+                } else {
+                    header.classList.remove("sticky");
+                    header.classList.add("fixed");
+                };
+            };
+        };
+
+        window.addEventListener('scroll', stickNavbar);
+        // SCROLL EVENT 
+
+
+        // collapsible button
+        const open = document.getElementById("nav-btn");
+        const sidebar = document.querySelector(".sidebar");
+
+        let handleClick = false; 
+
+        open.addEventListener("click", () => {
+            sidebar.classList.add("active");
+            handleClick = true;
+            // close on click close icon
+            const close = document.getElementById("side-btn");
+            close.addEventListener("click", () => {
+                handleClick = false;
+                sidebar.classList.remove("active");
+            })
+
+            // close on click outside sidebar 
+            if (handleClick) {
+                window.addEventListener("click", (e) => {
+                    if ((e.target.id !== "sidebar") && e.target.id !== "nav-btn") {
+                        handleClick = false;
+                        sidebar.classList.remove("active");
+                    }
+                })
+            }
+        })
+
+    </script>
+  </body>
+</html>

@@ -23,14 +23,14 @@ export default function Header() {
     // Nav Menu
     function NavMenu(props) {
         return (
-            <nav className="navbar">
+          <nav className="navbar">
             <ul>
                 <li className="nav-item"><a href="#intro" >Home</a></li>
                 <li className="nav-item"><a href="#team" >Team</a></li>
                 <li className="nav-item"><a href="#detail">Location</a></li>
                 <li className="nav-item"><a href="#detail-booking">Booking</a></li>
             </ul>
-        </nav>
+          </nav>
         )
     }
 
