@@ -1,0 +1,18 @@
+{
+  "files": {
+    "main.css": "/Hair-day-website/static/css/main.ac1d6bbd.css",
+    "main.js": "/Hair-day-website/static/js/main.ed9ab8ab.js",
+    "static/media/salon.png": "/Hair-day-website/static/media/salon.910a3fb2555bc47973e5.png",
+    "static/media/Artboard19.png": "/Hair-day-website/static/media/Artboard19.d48dbc3dc5b61d014fc0.png",
+    "static/media/Artboard22.png": "/Hair-day-website/static/media/Artboard22.49d6d9cfda69f4cf7f20.png",
+    "index.html": "/Hair-day-website/index.html",
+    "static/media/icon-close-menu.svg": "/Hair-day-website/static/media/icon-close-menu.3f33fd68b142340b7eb8c6887f92ee0c.svg",
+    "static/media/icon-menu.svg": "/Hair-day-website/static/media/icon-menu.863803c904916606b7a1998b3c5736aa.svg",
+    "main.ac1d6bbd.css.map": "/Hair-day-website/static/css/main.ac1d6bbd.css.map",
+    "main.ed9ab8ab.js.map": "/Hair-day-website/static/js/main.ed9ab8ab.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.ac1d6bbd.css",
+    "static/js/main.ed9ab8ab.js"
+  ]
+}
